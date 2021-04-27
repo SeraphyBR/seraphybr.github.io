@@ -14,6 +14,8 @@ pkgs.mkShell {
       rust_channel
       cargo-edit
       cargo-make
+      cargo-watch
+      wasm-pack
       microserver
       # Use steam-run, for a fhs enviroment, allow vscode code-lldb debugger to run
       # $ steam-run code .
