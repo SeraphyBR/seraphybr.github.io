@@ -11,12 +11,18 @@ pkgs.mkShell {
   buildInputs = with pkgs; [ stdenv zlib pkg-config openssl ];
   # nativeBuildInputs is usually what you want -- tools you need to run
   nativeBuildInputs = with pkgs; [
+      # Rust Compiler and Cargo
       rust_channel
+      # Cargo extensions
       cargo-edit
       cargo-make
       cargo-watch
+      # WASM
       wasm-pack
-      microserver
+      wasm-bindgen-cli
+      # Rust WASM App Bundler
+      trunk
+
       # Use steam-run, for a fhs enviroment, allow vscode code-lldb debugger to run
       # $ steam-run code .
       (steam.override {

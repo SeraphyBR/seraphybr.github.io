@@ -37,14 +37,17 @@ fn view(model: &Model) -> Node<Msg> {
         div![
             "This is a counter: ",
             C!["counter"],
-            button![model.counter, ev(Ev::Click, |_| Msg::Increment),],
+            button![model.counter, ev(Ev::Click, |_| Msg::Increment),C!["btn btn-primary"]],
         ],
-        md!["# Hello World"]
+        div![
+            C!["btn btn-primary"],
+            "Blue button top"
+        ],
+        div!["Teste"],
+        md!["# Hello World Yoooo 56"]
     ]
 }
 
-// (This function is invoked by `init` function in `index.html`.)
-#[wasm_bindgen(start)]
-pub fn start() {
+pub fn main() {
     App::start("app", init, update, view);
 }
