@@ -6,26 +6,28 @@ skip_core_tasks = true
 [tasks.watch]
 description = "Watch files and recompile the project on change"
 install_crate = { crate_name = "trunk", binary = "trunk", test_arg = "-h" }
-command = "trunk watch"
+command = "trunk"
+args = ["watch", "--open"]
 
 [tasks.serve]
 description = "Start server"
 install_crate = { crate_name = "trunk", binary = "trunk", test_arg = "-h" }
-command = "trunk serve"
-args = ["--open"]
+command = "trunk"
+args = ["serve", "--open"]
 
 # ---- BUILD ----
 
 [tasks.build]
 description = "Build with trunk"
 install_crate = { crate_name = "trunk", binary = "trunk", test_arg = "-h" }
-command = "trunk build"
+command = "trunk"
+args = ["build"]
 
 [tasks.build_release]
 description = "Build with trunk in release mode"
 install_crate = { crate_name = "trunk", binary = "trunk", test_arg = "-h" }
-command = "trunk build"
-args = ["--release"]
+command = "trunk"
+args = ["build", "--release"]
 
 # ---- LINT ----
 
