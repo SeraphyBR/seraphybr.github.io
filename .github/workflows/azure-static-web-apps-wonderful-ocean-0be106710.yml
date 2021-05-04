@@ -20,7 +20,7 @@ jobs:
           submodules: true
 
       - name: Setup Rust toolchain
-        uses: actions-rs/toolchain@v1
+        run: "rustup show"
 
       - name: Install cargo-make
         run: "cargo install cargo-make"
