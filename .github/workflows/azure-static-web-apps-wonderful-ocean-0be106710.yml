@@ -25,6 +25,12 @@ jobs:
       - name: Install cargo-make
         run: "cargo install cargo-make"
 
+      - name: Install wasm-bindgen-cli
+        run: "cargo install wasm-bindgen-cli"
+
+      - name: Install Trunk
+        run: "cargo install --locked trunk"
+
       - name: Build With Cargo
         run: "cargo make build_release"
                             
