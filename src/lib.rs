@@ -17,7 +17,7 @@ pub fn App() -> impl IntoView {
     provide_meta_context();
 
     view! {
-        <Html lang="en" dir="ltr" attr:data-theme="light"/>
+        <Html lang="pt-br" dir="ltr" attr:data-theme="light"/>
 
         // sets the document title
         <Title text="Welcome to Leptos CSR"/>

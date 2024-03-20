@@ -41,6 +41,8 @@ pub fn Home() -> impl IntoView {
 
                 <h1>"Welcome to Leptos"</h1>
 
+                <p class="text-xl bg-slate-100">"Teste tailwind"</p>
+
                 <div class="buttons">
                     <Button/>
                     <Button increment=5/>
