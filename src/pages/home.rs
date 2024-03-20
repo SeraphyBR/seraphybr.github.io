@@ -1,5 +1,6 @@
-use crate::components::background::Background;
 use leptos::*;
+
+use crate::components::card::Card;
 
 /// Default Home Page
 #[component]
@@ -23,15 +24,17 @@ pub fn Home() -> impl IntoView {
                 </ul>
             }
         }>
-            <Background>
-                <div class="tw-bg-gray-200 tw-flex tw-justify-center tw-items-center tw-h-screen">
-                    <div class="tw-text-center">
-                        <i class="fas fa-tools tw-text-5xl tw-mb-4"></i>
-                        <h1 class="tw-text-3xl tw-font-bold tw-mb-2">Em Construção</h1>
-                        <p class="tw-text-lg">Estamos trabalhando para melhorar sua experiência. Volte em breve!</p>
+            <div class="tw-flex tw-justify-center tw-items-center tw-h-[100vh]">
+                <Card>
+                    <div class="tw-flex tw-justify-center tw-items-center tw-m-9">
+                        <div class="tw-text-center">
+                            <i class="fas fa-tools tw-text-5xl tw-mb-4"></i>
+                            <h1 class="tw-text-3xl tw-font-bold tw-mb-2">Em Construção</h1>
+                            <p class="tw-text-lg">Estamos trabalhando para melhorar sua experiência. Volte em breve!</p>
+                        </div>
                     </div>
-                </div>
-            </Background>
+                </Card>
+            </div>
         </ErrorBoundary>
     }
 }
