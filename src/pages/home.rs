@@ -24,9 +24,12 @@ pub fn Home() -> impl IntoView {
             }
         }>
             <Background>
-                <div class="container">
-                    <p class="tw-text-xl tw-bg-slate-100">"Teste tailwind"</p>
-                    <i class="fa-solid fa-blog"></i>
+                <div class="tw-bg-gray-200 tw-flex tw-justify-center tw-items-center tw-h-screen">
+                    <div class="tw-text-center">
+                        <i class="fas fa-tools tw-text-5xl tw-mb-4"></i>
+                        <h1 class="tw-text-3xl tw-font-bold tw-mb-2">Em Construção</h1>
+                        <p class="tw-text-lg">Estamos trabalhando para melhorar sua experiência. Volte em breve!</p>
+                    </div>
                 </div>
             </Background>
         </ErrorBoundary>
