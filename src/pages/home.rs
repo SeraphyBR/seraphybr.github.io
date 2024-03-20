@@ -1,4 +1,4 @@
-use crate::components::counter_btn::Button;
+use crate::components::background::Background;
 use leptos::*;
 
 /// Default Home Page
@@ -23,30 +23,15 @@ pub fn Home() -> impl IntoView {
                 </ul>
             }
         }>
-
-            <div class="container">
-
-                <picture>
-                    <source
-                        srcset="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_pref_dark_RGB.svg"
-                        media="(prefers-color-scheme: dark)"
-                    />
-                    <img
-                        src="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_RGB.svg"
-                        alt="Leptos Logo"
-                        height="200"
-                        width="400"
-                    />
-                </picture>
-
-                <h1>"Welcome to Leptos"</h1>
-
-                <div class="buttons">
-                    <Button/>
-                    <Button increment=5/>
+            <Background>
+                <div class="tw-bg-gray-200 tw-flex tw-justify-center tw-items-center tw-h-screen">
+                    <div class="tw-text-center">
+                        <i class="fas fa-tools tw-text-5xl tw-mb-4"></i>
+                        <h1 class="tw-text-3xl tw-font-bold tw-mb-2">Em Construção</h1>
+                        <p class="tw-text-lg">Estamos trabalhando para melhorar sua experiência. Volte em breve!</p>
+                    </div>
                 </div>
-
-            </div>
+            </Background>
         </ErrorBoundary>
     }
 }

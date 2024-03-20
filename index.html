@@ -3,13 +3,23 @@
   <head>
     <!-- Add a plain CSS file: see https://trunkrs.dev/assets/#css -->
     <!-- If using Tailwind with Leptos CSR, see https://trunkrs.dev/assets/#tailwind instead-->
-    <link data-trunk rel="css" rel="stylesheet" href="public/styles.css" />
+    <link data-trunk rel="tailwind-css" href="public/tailwind.css" />
 
     <!-- Include favicon in dist output: see https://trunkrs.dev/assets/#icon -->
     <link data-trunk rel="icon" href="public/favicon.ico" />
+    <link data-trunk rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png"/>
+    <link data-trunk rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png"/>
 
     <!-- include support for `wasm-bindgen --weak-refs` - see: https://rustwasm.github.io/docs/wasm-bindgen/reference/weak-references.html -->
     <link data-trunk rel="rust" data-wasm-opt="z" data-weak-refs />
+
+    <!--Font Awesome Icons - With Personal Kit-->
+    <script src="https://kit.fontawesome.com/09525cbe17.js" crossorigin="anonymous"></script>
+
+    <!--Fira Sans Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
   <body></body>
 </html>
