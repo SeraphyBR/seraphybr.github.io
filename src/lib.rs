@@ -6,6 +6,7 @@ use leptos_router::*;
 mod components;
 mod pages;
 
+use crate::components::nav_menu::NavMenu;
 // Top-Level pages
 use crate::pages::home::Home;
 use crate::pages::not_found::NotFound;
@@ -32,6 +33,7 @@ pub fn App() -> impl IntoView {
         />
 
         <Router>
+            <NavMenu />
             <Routes>
                 <Route path="/" view=Home/>
                 <Route path="/*" view=NotFound/>

@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         sans: ['"Fira Sans"'],
       },
+      colors: {
+        graphite: '#222'
+      }
     },
   },
   plugins: [],

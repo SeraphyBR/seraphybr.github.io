@@ -15,5 +15,11 @@
         "comments": "on",
         "strings": true
     },
-    "css.validate": false
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer",
+        "editor.formatOnSave": true
+    },
+    "css.validate": false,
+    "html.autoClosingTags": true,
+    "rust-analyzer.semanticHighlighting.punctuation.enable": true
 }
