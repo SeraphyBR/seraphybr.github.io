@@ -8,8 +8,10 @@ mod pages;
 
 use crate::components::nav_menu::NavMenu;
 // Top-Level pages
-use crate::pages::home::Home;
-use crate::pages::not_found::NotFound;
+use crate::pages::home::HomePage;
+use crate::pages::not_found::NotFoundPage;
+
+use crate::pages::error::ErrorBoundaryPage;
 
 /// An app router which renders the homepage and handles 404's
 #[component]
@@ -32,12 +34,15 @@ pub fn App() -> impl IntoView {
             attr:style="background-image: url('img/background-1.jpg')"
         />
 
-        <Router>
-            <NavMenu />
-            <Routes>
-                <Route path="/" view=Home/>
-                <Route path="/*" view=NotFound/>
-            </Routes>
-        </Router>
+
+        <ErrorBoundaryPage>
+            <Router>
+                <NavMenu />
+                <Routes>
+                    <Route path="/" view=HomePage/>
+                    <Route path="/*" view=NotFoundPage/>
+                </Routes>
+            </Router>
+        </ErrorBoundaryPage>
     }
 }
