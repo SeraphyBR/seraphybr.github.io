@@ -2,18 +2,14 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
-// Modules
 mod components;
 mod pages;
 
 use crate::components::nav_menu::NavMenu;
-// Top-Level pages
+use crate::pages::error::ErrorBoundaryPage;
 use crate::pages::home::HomePage;
 use crate::pages::not_found::NotFoundPage;
 
-use crate::pages::error::ErrorBoundaryPage;
-
-/// An app router which renders the homepage and handles 404's
 #[component]
 pub fn App() -> impl IntoView {
     // Provides context that manages stylesheets, titles, meta tags, etc.
@@ -33,7 +29,6 @@ pub fn App() -> impl IntoView {
             class="tw-bg-no-repeat tw-bg-cover tw-h-full tw-bg-center tw-bg-fixed tw-bg-gray-800"
             attr:style="background-image: url('img/background-1.jpg')"
         />
-
 
         <ErrorBoundaryPage>
             <Router>
