@@ -21,5 +21,10 @@
     },
     "css.validate": false,
     "html.autoClosingTags": true,
-    "rust-analyzer.semanticHighlighting.punctuation.enable": true
+    "rust-analyzer.semanticHighlighting.punctuation.enable": true,
+    "tailwindCSS.files.exclude": [
+        "**/.git/**",
+        "**/node_modules/**",
+        "**/dist/**",
+    ]
 }
