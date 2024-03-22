@@ -52,6 +52,5 @@ fn NavButton() -> impl IntoView {
         <button class="tw-bg-graphite tw-w-12 tw-h-11 tw-opacity-60 tw-text-white tw-text-3xl tw-rounded">
             <i class="fa-solid fa-bars"></i>
         </button>
-
     }
 }

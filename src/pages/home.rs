@@ -10,7 +10,7 @@ pub fn HomePage() -> impl IntoView {
     let on_input = move |ev| set_value(event_target_value(&ev).parse::<i32>());
 
     view! {
-        <BasePage>
+        <BasePage title="Home">
             <div class="tw-flex tw-justify-center tw-items-center tw-m-9">
                 <div class="tw-text-center">
                     <i class="fas fa-tools tw-text-5xl tw-mb-4"></i>

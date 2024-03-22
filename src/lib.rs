@@ -15,11 +15,21 @@ pub fn App() -> impl IntoView {
     // Provides context that manages stylesheets, titles, meta tags, etc.
     provide_meta_context();
 
+    let title_formatter = |text: String| {
+        let base_title: String = "SeraphyBR`s Blog".into();
+
+        if text.is_empty() {
+            base_title
+        } else {
+            format!("{text} - {base_title}")
+        }
+    };
+
     view! {
         <Html lang="pt-br" dir="ltr" attr:data-theme="light"/>
 
         // sets the document title
-        <Title text="Em construção"/>
+        <Title formatter=title_formatter />
 
         // injects metadata in the <head> of the page
         <Meta charset="UTF-8"/>

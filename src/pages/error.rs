@@ -13,7 +13,7 @@ pub fn ErrorBoundaryPage(children: Children) -> impl IntoView {
 
 fn error(errors: RwSignal<Errors>) -> impl IntoView {
     view! {
-        <BasePage>
+        <BasePage title="Error">
             <div class="tw-flex tw-flex-col tw-gap-4">
                 <div class="tw-flex tw-flex-col tw-gap-1 tw-justify-center tw-items-center tw-text-red-900 tw-text-3xl tw-font-bold">
                     <i class="fa-solid fa-exclamation-circle"></i>
