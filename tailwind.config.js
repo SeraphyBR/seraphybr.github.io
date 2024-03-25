@@ -10,7 +10,8 @@ module.exports = {
         sans: ['"Fira Sans"'],
       },
       colors: {
-        graphite: '#222'
+        graphite: '#222',
+        greenLime: '#348314'
       }
     },
   },
