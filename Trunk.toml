@@ -1,0 +1,9 @@
+[build]
+target = "index.html"
+dist = "dist"
+
+[watch]
+ignore = ["./src/markdown_posts.rs"]
+
+[serve]
+port = 3000
