@@ -3,10 +3,13 @@ use leptos_meta::*;
 use leptos_router::*;
 
 mod components;
+mod contexts;
 mod markdown_posts;
+mod models;
 mod pages;
 
 use crate::components::nav_menu::NavMenu;
+use crate::contexts::posts::PostsProvider;
 use crate::pages::error::ErrorBoundaryPage;
 use crate::pages::home::HomePage;
 use crate::pages::not_found::NotFoundPage;
@@ -43,14 +46,16 @@ pub fn App() -> impl IntoView {
         />
 
         <ErrorBoundaryPage>
-            <Router>
-                <NavMenu />
-                <Routes>
-                    <Route path="/" view=HomePage/>
-                    <Route path="posts" view=PostsPage/>
-                    <Route path="/*" view=NotFoundPage/>
-                </Routes>
-            </Router>
+            <PostsProvider>
+                <Router>
+                    <NavMenu />
+                    <Routes>
+                        <Route path="/" view=HomePage/>
+                        <Route path="posts" view=PostsPage/>
+                        <Route path="/*" view=NotFoundPage/>
+                    </Routes>
+                </Router>
+            </PostsProvider>
         </ErrorBoundaryPage>
     }
 }
