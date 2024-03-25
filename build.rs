@@ -2,40 +2,35 @@ use std::fs;
 use std::io::Write;
 
 fn main() {
-    // Diretório que contém os arquivos Markdown
-    let diretorio = "./posts";
+    create_markdown_posts_with_files_to_include();
+}
 
-    // Abre ou cria um arquivo para escrita
-    let mut arquivo_saida =
+fn create_markdown_posts_with_files_to_include() {
+    let posts_folder = "./posts";
+
+    let mut out_file =
         fs::File::create("src/markdown_posts.rs").expect("Falha ao criar o arquivo de saída");
 
-    // Escreve o cabeçalho do arquivo de saída
-    writeln!(arquivo_saida, "pub const FILES: &[(&str, &str)] = &[").unwrap();
+    writeln!(out_file, "pub const FILES: &[(&str, &str)] = &[").unwrap();
 
-    // Lista todos os arquivos no diretório
-    let arquivos = fs::read_dir(diretorio).expect("Falha ao listar os arquivos no diretório");
+    let files = fs::read_dir(posts_folder).expect("Falha ao listar os arquivos no diretório");
 
-    // Itera sobre cada arquivo no diretório
-    for arquivo in arquivos {
-        let arquivo = arquivo.expect("Falha ao ler o arquivo");
-        let path = arquivo.path();
+    for file in files {
+        let file = file.expect("Falha ao ler o arquivo");
+        let path = file.path();
 
-        // Verifica se o arquivo é um arquivo regular e termina com extensão .md
         if path.is_file() && path.extension().map_or(false, |ext| ext == "md") {
-            // Obtém o nome do arquivo
-            let nome_arquivo = path.file_stem().unwrap().to_str().unwrap();
+            let file_name = path.file_stem().unwrap().to_str().unwrap();
 
-            // Escreve uma entrada na lista
             writeln!(
-                arquivo_saida,
+                out_file,
                 "    (\"{}\", include_str!(\"../{}\")),",
-                nome_arquivo,
+                file_name,
                 path.display()
             )
             .unwrap();
         }
     }
 
-    // Escreve o rodapé do arquivo de saída
-    writeln!(arquivo_saida, "];").unwrap();
+    writeln!(out_file, "];").unwrap();
 }
