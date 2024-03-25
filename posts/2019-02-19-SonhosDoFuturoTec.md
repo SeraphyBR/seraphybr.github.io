@@ -5,7 +5,7 @@ date: 2019-02-19 16:14:31 -0300
 tags: [video]
 feature: https://images.wallpaperscraft.com/image/city_vector_panorama_119914_1280x720.jpg
 feature-color: "#26b594e6"
-excerpt: "Vídeos que apresentam algumas Tecnologias antigas, mas que seu avanço irá mudar nossas vidas futuras."
+brief: "Vídeos que apresentam algumas Tecnologias antigas, mas que seu avanço irá mudar nossas vidas futuras."
 comments: true
 ---
 
@@ -18,7 +18,7 @@ pesquisar.
 #### 1) O inicio do fim da raça humana!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/P7XHzqZjXQs" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-* Nesse video, Ivan mostra como fez uma IA para gerar novas funções matemáticas, 
+* Nesse video, Ivan mostra como fez uma IA para gerar novas funções matemáticas,
   com base em algumas básicas feitas por ele, que mudariam o comportamento
   do Dinossauro do Chrome para que ele saltasse maior quantidade de obstáculos e consequentemente marcar
   mais pontos, com base na seleção natural e mutação do código genético de seres vivos.
@@ -30,8 +30,8 @@ pesquisar.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XWbY5jdJnHg" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 * Nesse video, é mostrado como a google está trabalhando com realidade aumentada no Google Maps, para
-    auxiliar a localização em cidades grandes, alem de fornecer um feedback visual mais interativo. 
-#### 3) Realidade++ 
+    auxiliar a localização em cidades grandes, alem de fornecer um feedback visual mais interativo.
+#### 3) Realidade++
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6AUUT88A_mc" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 * Nesse video a empresa "Realidade Aumentada Brasil" mostra o seu App de demonstração que mostra como a
     realidade aumentada pode ser utilizada, como para mostrar o interior de um Apartamento planejado por um
