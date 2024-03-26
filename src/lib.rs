@@ -42,7 +42,6 @@ pub fn App() -> impl IntoView {
 
         <Body
             class="tw-bg-no-repeat tw-bg-cover tw-h-full tw-bg-center tw-bg-fixed tw-bg-gray-800"
-            attr:style="background-image: url('img/background-1.jpg')"
         />
 
         <ErrorBoundaryPage>
@@ -53,6 +52,7 @@ pub fn App() -> impl IntoView {
                         <Route path="/" view=HomePage/>
                         <Route path="posts" view=PostListPage/>
                         <Route path="posts/:path" view=PostPage/>
+                        <Route path="404" view=NotFoundPage/>
                         <Route path="/*" view=NotFoundPage/>
                     </Routes>
                 </Router>

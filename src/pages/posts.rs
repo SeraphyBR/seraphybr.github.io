@@ -5,6 +5,7 @@ use leptos_router::Params;
 use leptos_router::Redirect;
 use leptos_router::A;
 
+use crate::models::posts::PostData;
 use crate::{
     components::button::LinkBtn, contexts::posts::use_posts, models::posts::PostMetadata,
     pages::base::BasePage,
@@ -49,13 +50,17 @@ pub fn PostPage() -> impl IntoView {
         let posts = use_posts();
 
         let post = posts.into_iter().find(|p| p.path == path);
-        if post.is_none() {
-            return view! { <Redirect path="/404"/> }.into_view();
-        }
 
-        post.map(|p| p.path).into_view()
+        post.map(|p| view! { <PostContentPage post=p/> })
+            .or_else(|| Some(view! { <Redirect path="/404"/> }))
+            .into_view()
     };
 
+    post
+}
+
+#[component]
+fn PostContentPage(post: PostData) -> impl IntoView {
     view! {
         <BasePage title="Todos os Posts">
             <div class="tw-vflex tw-justify-center tw-items-center tw-gap-5 tw-text-neutral-800 tw-p-8">
@@ -64,7 +69,7 @@ pub fn PostPage() -> impl IntoView {
                     <LinkBtn href="/"><i class="fa fa-home"></i></LinkBtn>
                 </div>
                 <div>
-                {post}
+                {post.path}
                 </div>
             </div>
         </BasePage>
