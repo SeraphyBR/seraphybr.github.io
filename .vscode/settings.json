@@ -27,5 +27,6 @@
         "**/node_modules/**",
         "**/dist/**",
     ],
-    "nixEnvSelector.nixFile": "${workspaceFolder}/shell.nix"
+    "nixEnvSelector.nixFile": "${workspaceFolder}/shell.nix",
+    "rust-analyzer.check.command": "clippy"
 }

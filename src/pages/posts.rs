@@ -1,5 +1,4 @@
 use leptos::*;
-use leptos_router::use_navigate;
 use leptos_router::use_params;
 use leptos_router::Params;
 use leptos_router::Redirect;
@@ -44,7 +43,7 @@ struct PostPageUrlParams {
 pub fn PostPage() -> impl IntoView {
     let params = use_params::<PostPageUrlParams>();
 
-    let post = move || {
+    move || {
         let path = params.get().map(|p| p.path).unwrap_or_default();
 
         let posts = use_posts();
@@ -54,9 +53,7 @@ pub fn PostPage() -> impl IntoView {
         post.map(|p| view! { <PostContentPage post=p/> })
             .or_else(|| Some(view! { <Redirect path="/404"/> }))
             .into_view()
-    };
-
-    post
+    }
 }
 
 #[component]
