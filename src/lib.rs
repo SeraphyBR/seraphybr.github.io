@@ -13,7 +13,7 @@ use crate::contexts::posts::PostsProvider;
 use crate::pages::error::ErrorBoundaryPage;
 use crate::pages::home::HomePage;
 use crate::pages::not_found::NotFoundPage;
-use crate::pages::posts::PostsPage;
+use crate::pages::posts::{PostListPage, PostPage};
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -51,7 +51,8 @@ pub fn App() -> impl IntoView {
                     <NavMenu />
                     <Routes>
                         <Route path="/" view=HomePage/>
-                        <Route path="posts" view=PostsPage/>
+                        <Route path="posts" view=PostListPage/>
+                        <Route path="posts/:path" view=PostPage/>
                         <Route path="/*" view=NotFoundPage/>
                     </Routes>
                 </Router>
