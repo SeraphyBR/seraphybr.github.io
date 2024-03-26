@@ -13,12 +13,14 @@ pub fn PostsPage() -> impl IntoView {
     view! {
         <BasePage title="Todos os Posts">
             <div class="tw-vflex tw-justify-center tw-items-center tw-gap-5 tw-text-neutral-800 tw-p-8">
-                <div>
+                <div class="tw-vflex tw-items-center tw-gap-6 tw-pb-12">
                     <h1 class="tw-text-3xl tw-font-bold">Todas as postagens</h1>
+                    <LinkBtn href="/"><i class="fa fa-home"></i></LinkBtn>
                 </div>
                 <ul class="tw-vflex tw-gap-8">
                     {
                         posts.into_iter()
+                            .filter(|p| !p.metadata.project)
                             .map(|p| view! { <PostItem path=p.path metadata=p.metadata /> })
                             .collect_view()
                     }
