@@ -25,6 +25,7 @@ fn get_posts_data() -> Vec<PostData> {
 
     let mut options = Options::default();
 
+    options.compile.allow_dangerous_html = true;
     options.parse.constructs.frontmatter = true;
 
     let posts = FILES

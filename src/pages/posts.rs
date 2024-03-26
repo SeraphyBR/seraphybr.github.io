@@ -68,9 +68,8 @@ fn PostContentPage(post: PostData) -> impl IntoView {
                     <h1 class="tw-text-3xl tw-font-bold">Todas as postagens</h1>
                     <LinkBtn href="/"><i class="fa fa-home"></i></LinkBtn>
                 </div>
-                <div>
-                {post.path}
-                </div>
+                <article class="tw-prose" inner_html=post.content>
+                </article>
             </div>
         </BasePage>
     }
