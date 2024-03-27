@@ -59,13 +59,13 @@ pub fn PostPage() -> impl IntoView {
 #[component]
 fn PostContentPage(post: PostData) -> impl IntoView {
     view! {
-        <BasePage title="Todos os Posts">
+        <BasePage title=post.metadata.title.clone()>
             <div class="tw-vflex tw-justify-center tw-items-center tw-gap-5 tw-text-neutral-800 tw-p-8">
                 <div class="tw-vflex tw-items-center tw-gap-6 tw-pb-12">
                     <h1 class="tw-text-3xl tw-font-bold">{post.metadata.title}</h1>
                     <LinkBtn href="/posts"><i class="fa fa-chevron-left"></i></LinkBtn>
                 </div>
-                <article class="tw-prose" inner_html=post.content>
+                <article class="tw-prose tw-max-w-none" inner_html=post.content>
                 </article>
             </div>
         </BasePage>
