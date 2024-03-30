@@ -60,7 +60,7 @@ pub fn PostPage() -> impl IntoView {
 fn PostContentPage(post: PostData) -> impl IntoView {
     view! {
         <BasePage title=post.metadata.title.clone()>
-            <div class="tw-vflex tw-justify-center tw-items-center tw-gap-5 tw-text-neutral-800 tw-p-8">
+            <div class="tw-vflex tw-justify-center tw-items-stretch tw-gap-5 tw-text-neutral-800 tw-p-8">
                 <div class="tw-vflex tw-items-center tw-gap-6 tw-p-40 -tw-mt-16 -tw-ml-16 -tw-mr-16 tw-rounded-t-xl" style:background-color=post.metadata.front_color>
                     <h1 class="tw-text-3xl tw-font-bold tw-text-center tw-text-white">{post.metadata.title}</h1>
                     <h4 class="tw-text-xl tw-font-bold tw-text-white">Criado em {post.metadata.date.format("%d-%m-%Y").to_string()}</h4>
