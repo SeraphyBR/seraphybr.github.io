@@ -42,8 +42,8 @@ jobs:
       - name: Download and install Node Dependencies (Tailwind)
         run: npm install
 
-      #- name: lint
-      #  run: cargo clippy & cargo fmt
+      - name: lint
+        run: cargo clippy & cargo fmt
 
       - name: Download and install Trunk binary
         run: wget -qO- https://github.com/trunk-rs/trunk/releases/download/v0.18.4/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
