@@ -3,7 +3,7 @@ layout: post
 title: "02 - Vídeos Motivacionais"
 date: 2019-02-12 15:03:31 -0300
 tags: [video]
-front_image: https://images.wallpaperscraft.com/image/silhouette_starry_sky_shooting_star_131373_1280x720.jpg
+front_image: https://images.unsplash.com/photo-1503713533176-bbd66a5228b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 front_color: "#0094ffab"
 brief: "Aqui estão 3 vídeos motivacionais que eu recomendo assistir e que me identifiquei de alguma forma"
 comments: true
