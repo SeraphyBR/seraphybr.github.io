@@ -7,3 +7,13 @@
     @apply tw-h-[100vh];
   }
 }
+
+@layer utilities {
+    .tw-vflex {
+        @apply tw-flex tw-flex-col
+    }
+
+    .tw-hflex {
+        @apply tw-flex tw-flex-row
+    }
+}

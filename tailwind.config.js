@@ -9,7 +9,13 @@ module.exports = {
       fontFamily: {
         sans: ['"Fira Sans"'],
       },
+      colors: {
+        graphite: '#222',
+        greenLime: '#348314'
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 };
