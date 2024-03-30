@@ -39,14 +39,11 @@ jobs:
       - name: Add WASM target
         run: rustup target add wasm32-unknown-unknown
 
-      - name: lint
-        run: cargo clippy & cargo fmt
+      - name: Download and install Node Dependencies (Tailwind)
+        run: npm install
 
-
-      # If using tailwind...
-      # - name: Download and install tailwindcss binary
-      #   run: npm install -D tailwindcss && npx tailwindcss -i <INPUT/PATH.css> -o <OUTPUT/PATH.css>  # run tailwind
-
+      #- name: lint
+      #  run: cargo clippy & cargo fmt
 
       - name: Download and install Trunk binary
         run: wget -qO- https://github.com/trunk-rs/trunk/releases/download/v0.18.4/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
@@ -59,16 +56,7 @@ jobs:
         # will obviously return error 404 not found.
         run: ./trunk build --release
 
-
-      # Deploy to gh-pages branch
-      # - name: Deploy 🚀
-      #   uses: JamesIves/github-pages-deploy-action@v4
-      #   with:
-      #     folder: dist
-
-
       # Deploy with Github Static Pages
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
