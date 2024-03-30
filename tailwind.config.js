@@ -12,6 +12,9 @@ module.exports = {
       colors: {
         graphite: '#222',
         greenLime: '#348314'
+      },
+      backgroundImage: {
+        'forest-stairs': "url('/img/background-1.jpg')"
       }
     },
   },
