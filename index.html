@@ -23,6 +23,7 @@
     />
 
     <link data-trunk rel="copy-dir" href="public/img" />
+    <link data-trunk rel="copy-file" href="404.html" />
 
     <!-- include support for `wasm-bindgen --weak-refs` - see: https://rustwasm.github.io/docs/wasm-bindgen/reference/weak-references.html -->
     <link data-trunk rel="rust" data-wasm-opt="z" data-weak-refs />
@@ -42,6 +43,17 @@
     />
 
     <title>SeraphyBR's Blog</title>
+
+    <!--Github Page 404 Hack for SPA routing-->
+    <script>
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
   </head>
   <body
     class="tw-vflex tw-bg-no-repeat tw-bg-cover tw-bg-center tw-bg-fixed tw-bg-gray-800 tw-bg-forest-stairs"
