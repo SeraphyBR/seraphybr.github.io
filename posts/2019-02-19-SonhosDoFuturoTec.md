@@ -3,8 +3,8 @@ layout: post
 title: "03 - Tecnologias do passado, sonhos do futuro"
 date: 2019-02-19 16:14:31 -0300
 tags: [video]
-feature: https://images.wallpaperscraft.com/image/city_vector_panorama_119914_1280x720.jpg
-feature-color: "#26b594e6"
+front_image: https://images.wallpaperscraft.com/image/city_vector_panorama_119914_1280x720.jpg
+front_color: "#26b594e6"
 brief: "Vídeos que apresentam algumas Tecnologias antigas, mas que seu avanço irá mudar nossas vidas futuras."
 comments: true
 ---
