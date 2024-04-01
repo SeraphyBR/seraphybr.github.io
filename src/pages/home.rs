@@ -1,23 +1,43 @@
 use leptos::*;
 
-use crate::pages::base::BasePage;
+use crate::{components::button::LinkBtn, pages::base::BasePage};
 
-/// Default Home Page
 #[component]
 pub fn HomePage() -> impl IntoView {
-    let (value, set_value) = create_signal(Ok(0));
-
-    let on_input = move |ev| set_value(event_target_value(&ev).parse::<i32>());
-
     view! {
-        <BasePage title="Home">
-            <div class="tw-flex tw-justify-center tw-items-center tw-m-9">
-                <div class="tw-text-center">
-                    <i class="fas fa-tools tw-text-5xl tw-mb-4"></i>
-                    <h1 class="tw-text-3xl tw-font-bold tw-mb-2">Em Construção</h1>
-                    <p class="tw-text-lg">Estamos trabalhando para melhorar sua experiência. Volte em breve!</p>
-                    <input type="number" on:input=on_input/>
-                    <p>"You entered " <strong>{value}</strong></p>
+        <BasePage title="Home" class="!tw-max-w-lg">
+            <div class="tw-vflex tw-justify-center tw-items-center tw-gap-2">
+                <img src="/img/logo.png" class="tw-mx-auto tw-rounded-[50%] tw-w-36 tw-h-36"/>
+                <h3 class="tw-text-xl tw-font-light">"SeraphyBR's Blog"</h3>
+                <hr />
+                <h3 class="tw-text-base tw-font-light">"Desenvolvedor - Página em construção"</h3>
+                <hr />
+                <div class="tw-hflex tw-gap-5">
+                    <LinkBtn href="mailto:luisjuniorbr@gmail.com" class="!tw-text-3xl">
+                        <i class="fa fa-envelope-square"/>
+                    </LinkBtn>
+
+                    <LinkBtn href="https://github.com/seraphybr" class="!tw-text-3xl">
+                        <i class="fa-brands fa-github"/>
+                    </LinkBtn>
+
+                    <LinkBtn href="https://t.me/seraphybr" class="!tw-text-3xl">
+                        <i class="fa-brands fa-telegram"/>
+                    </LinkBtn>
+                </div>
+                <hr />
+                <div class="tw-hflex tw-gap-5">
+                    <LinkBtn href="about" class="!tw-text-base !tw-font-normal">
+                        Sobre
+                    </LinkBtn>
+
+                    <LinkBtn href="posts" class="!tw-text-base !tw-font-normal">
+                        Posts
+                    </LinkBtn>
+
+                    <LinkBtn href="projects" class="!tw-text-base !tw-font-normal">
+                        Projetos
+                    </LinkBtn>
                 </div>
             </div>
         </BasePage>
