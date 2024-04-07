@@ -1,6 +1,9 @@
 use leptos::*;
 
-use crate::{components::button::LinkBtn, pages::base::BasePage};
+use crate::{
+    components::{button::LinkBtn, divider::Divider},
+    pages::base::BasePage,
+};
 
 #[component]
 pub fn HomePage() -> impl IntoView {
@@ -9,9 +12,9 @@ pub fn HomePage() -> impl IntoView {
             <div class="tw-vflex tw-justify-center tw-items-center tw-gap-2">
                 <img src="/img/logo.png" class="tw-mx-auto tw-rounded-[50%] tw-w-36 tw-h-36"/>
                 <h3 class="tw-text-xl tw-font-light">"SeraphyBR's Blog"</h3>
-                <hr />
+                <Divider />
                 <h3 class="tw-text-base tw-font-light">"Desenvolvedor - Página em construção"</h3>
-                <hr />
+                <Divider />
                 <div class="tw-hflex tw-gap-5">
                     <LinkBtn href="mailto:luisjuniorbr@gmail.com" class="!tw-text-3xl">
                         <i class="fa fa-envelope-square"/>
@@ -25,7 +28,7 @@ pub fn HomePage() -> impl IntoView {
                         <i class="fa-brands fa-telegram"/>
                     </LinkBtn>
                 </div>
-                <hr />
+                <Divider />
                 <div class="tw-hflex tw-gap-5">
                     <LinkBtn href="about" class="!tw-text-base !tw-font-normal !tw-min-w-24">
                         Sobre
