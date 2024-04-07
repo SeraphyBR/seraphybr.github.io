@@ -27,15 +27,15 @@ pub fn HomePage() -> impl IntoView {
                 </div>
                 <hr />
                 <div class="tw-hflex tw-gap-5">
-                    <LinkBtn href="about" class="!tw-text-base !tw-font-normal">
+                    <LinkBtn href="about" class="!tw-text-base !tw-font-normal !tw-min-w-24">
                         Sobre
                     </LinkBtn>
 
-                    <LinkBtn href="posts" class="!tw-text-base !tw-font-normal">
+                    <LinkBtn href="posts" class="!tw-text-base !tw-font-normal !tw-min-w-24">
                         Posts
                     </LinkBtn>
 
-                    <LinkBtn href="projects" class="!tw-text-base !tw-font-normal">
+                    <LinkBtn href="projects" class="!tw-text-base !tw-font-normal !tw-min-w-24">
                         Projetos
                     </LinkBtn>
                 </div>

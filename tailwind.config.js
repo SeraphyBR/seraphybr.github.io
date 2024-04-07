@@ -2,7 +2,7 @@
 module.exports = {
   prefix: 'tw-',
   content: {
-    files: ['*.html', './src/**/*.rs'],
+    files: ['./index.html', './src/**/*.rs'],
   },
   theme: {
     extend: {
@@ -11,14 +11,12 @@ module.exports = {
       },
       colors: {
         graphite: '#222',
-        greenLime: '#348314'
+        greenLime: '#348314',
       },
       backgroundImage: {
-        'forest-stairs': "url('/img/background-1.jpg')"
-      }
+        'forest-stairs': "url('/img/background-1.jpg')",
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography')
-  ],
+  plugins: [require('@tailwindcss/typography')],
 };

@@ -7,3 +7,6 @@ ignore = ["./src/markdown_posts.rs"]
 
 [serve]
 port = 3000
+
+[tools]
+tailwindcss = "3.4.3"
