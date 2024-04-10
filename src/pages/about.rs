@@ -52,10 +52,14 @@ fn AboutContent() -> impl IntoView {
                 para ficar no meu gosto, e criei meus primeiros posts em markdown, a pedido da disciplina do curso.
             </li>
             <li>
-                Em 2024, que para mim é agora, após todas as experiencias que adquiri durante o Curso, estágio e trabalho, eu finalmente dei inicio ao projeto de
+                Em 2024, após todas as experiencias que adquiri durante o Curso, estágio e trabalho, eu finalmente dei inicio ao projeto de
                 reescrever todo o Blog em tecnologias mais modernas, onde eu teria muito mais controle, entenderia de fato como funciona, me sentiria mais orgulhoso e ainda
-                poderia colocar em prática meus conhecimentos tanto em desenvolvimento Web, quanto na linguagem Rust "(que eu sou fã)", e ainda mantendo-se o mais fiel possível
+                poderia colocar em prática meus conhecimentos em desenvolvimento Web e demais tecnologias, mantendo-se o mais fiel possível
                 ao design do meu primeiro Blog com Jeklly, que eu já me sentia confortável e ajudaria no processo.
+            </li>
+            <li>
+                Mais detalhes técnicos sobre o desenvolvimento desse Blog, processo de decisão de escolha das tecnologias usadas, design, e paralelos com o original em Jeklly,
+                estarão presentes na parte de Projetos.
             </li>
         </ul>
     }
