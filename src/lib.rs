@@ -10,6 +10,7 @@ mod pages;
 
 use crate::components::nav_menu::NavMenu;
 use crate::contexts::posts::PostsProvider;
+use crate::pages::about::AboutPage;
 use crate::pages::error::ErrorBoundaryPage;
 use crate::pages::home::HomePage;
 use crate::pages::not_found::NotFoundPage;
@@ -48,6 +49,7 @@ pub fn App() -> impl IntoView {
                         <Route path="/" view=HomePage/>
                         <Route path="posts" view=PostListPage/>
                         <Route path="posts/:path" view=PostPage/>
+                        <Route path="about" view=AboutPage/>
                         <Route path="404" view=NotFoundPage/>
                         <Route path="/*" view=NotFoundPage/>
                     </Routes>

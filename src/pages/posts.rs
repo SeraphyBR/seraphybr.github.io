@@ -4,6 +4,7 @@ use leptos_router::Params;
 use leptos_router::Redirect;
 use leptos_router::A;
 
+use crate::components::content::BaseContent;
 use crate::models::posts::PostData;
 use crate::{
     components::button::LinkBtn, contexts::posts::use_posts, models::posts::PostMetadata,
@@ -62,20 +63,15 @@ fn PostContentPage(post: PostData) -> impl IntoView {
 
     view! {
         <BasePage title=post.metadata.title.clone()>
-            <div class="tw-vflex tw-justify-center tw-items-stretch tw-gap-5 tw-text-neutral-800 tw-p-8">
-                <div class="tw-vflex tw-items-center tw-gap-6 tw-p-40 -tw-mt-16 -tw-ml-16 -tw-mr-16 tw-rounded-t-xl tw-bg-blend-multiply tw-bg-center tw-bg-cover"
-                    style:background-color=post.metadata.front_color
-                    style:background-image=bg_img
-                >
-                    <h1 class="tw-text-3xl tw-font-bold tw-text-center tw-text-white">{post.metadata.title}</h1>
-                    <h4 class="tw-text-xl tw-font-bold tw-text-white">Criado em {post.metadata.date.format("%d-%m-%Y").to_string()}</h4>
-                    <LinkBtn href="/posts">
-                        <i class="fa fa-chevron-left"></i>
-                    </LinkBtn>
-                </div>
-                <article class="tw-prose tw-max-w-none" inner_html=post.content>
-                </article>
-            </div>
+            <BaseContent
+                title=post.metadata.title
+                bg_color=post.metadata.front_color
+                bg_img=bg_img
+                created_date=post.metadata.date
+                inner_html=post.content
+                back_href="/posts"
+            >
+            </BaseContent>
         </BasePage>
     }
 }

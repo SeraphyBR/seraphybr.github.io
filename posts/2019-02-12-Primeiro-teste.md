@@ -11,14 +11,8 @@ mathjax: true
 
 ## Hello World
 
-{% highlight rust %}
+```rust
 fn main(){
-printf!("Hello World");
+    printf!("Hello World");
 }
-{% endhighlight %}
-
--   Teste MathJax
-    <br><br>
-    $$S = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10$$
-    <br><br>
-    $$S = \sum_{N = 1}^{10} N $$
+```
