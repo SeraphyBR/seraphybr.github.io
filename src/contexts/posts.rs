@@ -28,7 +28,7 @@ fn get_posts_data() -> Vec<PostData> {
     options.compile.allow_dangerous_html = true;
     options.parse.constructs.frontmatter = true;
 
-    let posts = FILES
+    let mut posts: Vec<PostData> = FILES
         .iter()
         .map(|file| {
             let matter = Matter::<YAML>::new();
@@ -45,6 +45,9 @@ fn get_posts_data() -> Vec<PostData> {
             }
         })
         .collect();
+
+    posts.sort_by_key(|p| p.metadata.date);
+    posts.reverse();
 
     posts
 }
