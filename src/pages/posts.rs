@@ -35,6 +35,17 @@ pub fn PostListPage() -> impl IntoView {
     }
 }
 
+#[component]
+fn PostItem(path: String, metadata: PostMetadata) -> impl IntoView {
+    view! {
+        <li class="tw-vflex tw-gap-4">
+            <A href=path.clone() class="tw-font-bold tw-text-xl hover:tw-text-greenLime">{metadata.title}</A>
+            <p class="tw-font-light tw-text-base">{metadata.brief}</p>
+            <LinkBtn href=path>Ler Mais</LinkBtn>
+        </li>
+    }
+}
+
 #[derive(Params, PartialEq, Clone)]
 struct PostPageUrlParams {
     path: String,
@@ -49,7 +60,10 @@ pub fn PostPage() -> impl IntoView {
 
         let posts = use_posts();
 
-        let post = posts.into_iter().find(|p| p.path == path);
+        let post = posts
+            .into_iter()
+            .filter(|p| !p.metadata.project)
+            .find(|p| p.path == path);
 
         post.map(|p| view! { <PostContentPage post=p/> })
             .or_else(|| Some(view! { <Redirect path="/404"/> }))
@@ -73,16 +87,5 @@ fn PostContentPage(post: PostData) -> impl IntoView {
             >
             </BaseContent>
         </BasePage>
-    }
-}
-
-#[component]
-fn PostItem(path: String, metadata: PostMetadata) -> impl IntoView {
-    view! {
-        <li class="tw-vflex tw-gap-4">
-            <A href=path.clone() class="tw-font-bold tw-text-xl hover:tw-text-greenLime">{metadata.title}</A>
-            <p class="tw-font-light tw-text-base">{metadata.brief}</p>
-            <LinkBtn href=path>Ler Mais</LinkBtn>
-        </li>
     }
 }

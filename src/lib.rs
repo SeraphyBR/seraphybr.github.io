@@ -15,6 +15,7 @@ use crate::pages::error::ErrorBoundaryPage;
 use crate::pages::home::HomePage;
 use crate::pages::not_found::NotFoundPage;
 use crate::pages::posts::{PostListPage, PostPage};
+use crate::pages::projects::{ProjectPage, ProjectsListPage};
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -49,6 +50,8 @@ pub fn App() -> impl IntoView {
                         <Route path="/" view=HomePage/>
                         <Route path="posts" view=PostListPage/>
                         <Route path="posts/:path" view=PostPage/>
+                        <Route path="projects" view=ProjectsListPage/>
+                        <Route path="projects/:path" view=ProjectPage/>
                         <Route path="about" view=AboutPage/>
                         <Route path="404" view=NotFoundPage/>
                         <Route path="/*" view=NotFoundPage/>
