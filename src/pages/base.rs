@@ -1,12 +1,14 @@
 use leptos::*;
 use leptos_meta::Title;
 
+use crate::components::back_to_top::BackToTopBtn;
 use crate::components::card::Card;
 
 #[component]
 pub fn BasePage(
     #[prop(optional, into)] title: String,
     #[prop(optional, into)] class: String,
+    #[prop(optional, into)] enable_back_to_top: bool,
     children: Children,
 ) -> impl IntoView {
     view! {
@@ -16,5 +18,8 @@ pub fn BasePage(
                 {children()}
             </Card>
         </div>
+        <Show when=move || enable_back_to_top>
+            <BackToTopBtn/>
+        </Show>
     }
 }

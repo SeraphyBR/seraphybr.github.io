@@ -85,7 +85,7 @@ fn ProjectContentPage(post: PostData) -> impl IntoView {
     let bg_img = post.metadata.front_image.map(|bg| format!("url({bg})"));
 
     view! {
-        <BasePage title=post.metadata.title.clone()>
+        <BasePage title=post.metadata.title.clone() enable_back_to_top=true>
             <BaseContent
                 title=post.metadata.title
                 bg_color=post.metadata.front_color
