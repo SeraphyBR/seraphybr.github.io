@@ -25,7 +25,7 @@ pub fn DarkModeToggleBtn() -> impl IntoView {
 
     view! {
         <div class="tw-fixed tw-top-6 tw-right-6">
-            <LinkBtn href="#" on:click=on_click_go_to_top>
+            <LinkBtn href="#" on:click=on_click_go_to_top class="!tw-bg-opacity-80">
                 <i class="fa-solid fa-circle-half-stroke"/>
             </LinkBtn>
         </div>
