@@ -33,7 +33,7 @@ pub fn App() -> impl IntoView {
     };
 
     view! {
-        <Html lang="pt-br" dir="ltr" attr:data-theme="light"/>
+        <Html lang="pt-br" dir="ltr" />
 
         // sets the document title
         <Title formatter=title_formatter />

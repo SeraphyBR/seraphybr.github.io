@@ -17,7 +17,7 @@ pub fn PostListPage() -> impl IntoView {
 
     view! {
         <BasePage title="Todos os Posts">
-            <div class="tw-vflex tw-justify-center tw-items-center tw-gap-5 tw-text-neutral-800 tw-p-8">
+            <div class="tw-vflex tw-justify-center tw-items-center tw-gap-5 tw-text-neutral-800 dark:tw-text-white tw-p-8">
                 <div class="tw-vflex tw-items-center tw-gap-6 tw-pb-12">
                     <h1 class="tw-text-3xl tw-font-bold">Todas as postagens</h1>
                     <LinkBtn href="/"><i class="fa fa-home"></i></LinkBtn>
