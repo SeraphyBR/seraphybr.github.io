@@ -4,7 +4,7 @@ use leptos_use::use_window_scroll;
 use web_sys::{ScrollBehavior, ScrollToOptions};
 
 #[component]
-pub fn BackToTopBtn() -> impl IntoView {
+pub fn DarkModeToggleBtn() -> impl IntoView {
     let (_, y) = use_window_scroll();
 
     let opacity_btn = move || {
@@ -24,9 +24,9 @@ pub fn BackToTopBtn() -> impl IntoView {
     };
 
     view! {
-        <div style:opacity=opacity_btn class="tw-fixed tw-bottom-6 tw-right-6 tw-transition-opacity tw-duration-700 tw-ease-in-out">
+        <div class="tw-fixed tw-top-6 tw-right-6">
             <LinkBtn href="#" on:click=on_click_go_to_top>
-                <i class="fa-solid fa-chevron-up"/>
+                <i class="fa-solid fa-circle-half-stroke"/>
             </LinkBtn>
         </div>
     }
