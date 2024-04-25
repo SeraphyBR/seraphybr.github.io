@@ -1,31 +1,24 @@
 use crate::components::button::LinkBtn;
 use leptos::*;
-use leptos_use::use_window_scroll;
-use web_sys::{ScrollBehavior, ScrollToOptions};
+use leptos_meta::Html;
+use leptos_use::{use_color_mode, ColorMode, UseColorModeReturn};
 
 #[component]
 pub fn DarkModeToggleBtn() -> impl IntoView {
-    let (_, y) = use_window_scroll();
+    let UseColorModeReturn { mode, set_mode, .. } = use_color_mode();
 
-    let opacity_btn = move || {
-        if y() > 300.0 {
-            1
+    let on_click_toggle = move |_| {
+        if mode() == ColorMode::Dark {
+            set_mode(ColorMode::Light);
         } else {
-            0
+            set_mode(ColorMode::Dark);
         }
     };
 
-    let on_click_go_to_top = |_| {
-        window().scroll_to_with_scroll_to_options(
-            ScrollToOptions::new()
-                .behavior(ScrollBehavior::Smooth)
-                .top(0.0),
-        );
-    };
-
     view! {
+        <Html class=move || if mode() == ColorMode::Dark {"tw-dark"} else {""} />
         <div class="tw-fixed tw-top-6 tw-right-6">
-            <LinkBtn href="#" on:click=on_click_go_to_top class="!tw-bg-opacity-80">
+            <LinkBtn href="#" on:click=on_click_toggle class="!tw-bg-opacity-80">
                 <i class="fa-solid fa-circle-half-stroke"/>
             </LinkBtn>
         </div>

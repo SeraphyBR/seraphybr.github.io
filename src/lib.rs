@@ -17,6 +17,8 @@ use crate::pages::not_found::NotFoundPage;
 use crate::pages::posts::{PostListPage, PostPage};
 use crate::pages::projects::{ProjectPage, ProjectsListPage};
 
+use crate::components::dark_mode_toggle::DarkModeToggleBtn;
+
 #[component]
 pub fn App() -> impl IntoView {
     // Provides context that manages stylesheets, titles, meta tags, etc.
@@ -46,6 +48,7 @@ pub fn App() -> impl IntoView {
             <PostsProvider>
                 <Router>
                     <NavMenu />
+                    <DarkModeToggleBtn />
                     <Routes>
                         <Route path="/" view=HomePage/>
                         <Route path="posts" view=PostListPage/>

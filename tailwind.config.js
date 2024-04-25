@@ -4,6 +4,7 @@ module.exports = {
   content: {
     files: ['./index.html', './src/**/*.rs'],
   },
+  darkMode: 'selector',
   theme: {
     extend: {
       fontFamily: {
