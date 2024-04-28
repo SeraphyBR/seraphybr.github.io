@@ -17,7 +17,7 @@ use crate::pages::not_found::NotFoundPage;
 use crate::pages::posts::{PostListPage, PostPage};
 use crate::pages::projects::{ProjectPage, ProjectsListPage};
 
-use crate::components::dark_mode_toggle::DarkModeToggleBtn;
+use crate::components::dark_mode::DarkModeToggleBtn;
 
 #[component]
 pub fn App() -> impl IntoView {
