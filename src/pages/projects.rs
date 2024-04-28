@@ -2,7 +2,7 @@ use leptos::*;
 use leptos_router::{use_params, Params, Redirect, A};
 
 use crate::{
-    components::{button::LinkBtn, content::BaseContent},
+    components::content::BaseContent,
     contexts::posts::use_posts,
     models::posts::{PostData, PostMetadata},
     pages::base::BasePage,
@@ -14,10 +14,10 @@ pub fn ProjectsListPage() -> impl IntoView {
 
     view! {
         <BasePage title="Projetos">
-            <div class="tw-vflex tw-justify-center tw-items-center tw-gap-5 tw-text-neutral-800 tw-p-8">
+            <div class="tw-vflex tw-justify-center tw-items-center tw-gap-5 tw-text-neutral-800 dark:tw-text-white tw-p-8">
                 <div class="tw-vflex tw-items-center tw-gap-6 tw-pb-12">
                     <h1 class="tw-text-3xl tw-font-bold">Projetos</h1>
-                    <LinkBtn href="/"><i class="fa fa-home"></i></LinkBtn>
+                    <A href="/" class="tw-btn-primary"><i class="fa fa-home"></i></A>
                 </div>
                 <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-4">
                     {
@@ -35,14 +35,14 @@ pub fn ProjectsListPage() -> impl IntoView {
 #[component]
 fn ProjectItem(path: String, metadata: PostMetadata) -> impl IntoView {
     view! {
-        <div class="tw-max-w-sm tw-rounded-xl tw-overflow-hidden tw-shadow-lg">
+        <div class="tw-max-w-sm tw-rounded-xl tw-overflow-hidden tw-shadow-lg dark:tw-shadow-none dark:tw-border-2 dark:tw-border-gray-600">
             <img
                 class="tw-w-full tw-h-36"
                 src=metadata.front_image
                 alt=""
                 style:background-color=metadata.front_color
             />
-            <A href=path class="tw-text-gray-700 hover:tw-text-greenLime">
+            <A href=path class="tw-text-gray-700 dark:tw-text-white hover:tw-text-accent dark:hover:tw-text-accent-light">
                 <div class="tw-px-6 tw-py-4">
                     <div class="tw-font-bold tw-text-xl tw-mb-2">{metadata.title}</div>
                     <p class="tw-text-base">

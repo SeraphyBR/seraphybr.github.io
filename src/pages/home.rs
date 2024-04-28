@@ -1,9 +1,7 @@
 use leptos::*;
+use leptos_router::A;
 
-use crate::{
-    components::{button::LinkBtn, divider::Divider},
-    pages::base::BasePage,
-};
+use crate::{components::divider::Divider, pages::base::BasePage};
 
 #[component]
 pub fn HomePage() -> impl IntoView {
@@ -16,31 +14,31 @@ pub fn HomePage() -> impl IntoView {
                 <h3 class="tw-text-base tw-font-light">"Desenvolvedor - Página em construção"</h3>
                 <Divider />
                 <div class="tw-hflex tw-gap-5">
-                    <LinkBtn href="mailto:luisjuniorbr@gmail.com" class="!tw-text-3xl">
+                    <A href="mailto:luisjuniorbr@gmail.com" class="tw-btn-primary !tw-text-3xl">
                         <i class="fa fa-envelope-square"/>
-                    </LinkBtn>
+                    </A>
 
-                    <LinkBtn href="https://github.com/seraphybr" class="!tw-text-3xl">
+                    <A href="https://github.com/seraphybr" class="tw-btn-primary !tw-text-3xl">
                         <i class="fa-brands fa-github"/>
-                    </LinkBtn>
+                    </A>
 
-                    <LinkBtn href="https://t.me/seraphybr" class="!tw-text-3xl">
+                    <A href="https://t.me/seraphybr" class="tw-btn-primary !tw-text-3xl">
                         <i class="fa-brands fa-telegram"/>
-                    </LinkBtn>
+                    </A>
                 </div>
                 <Divider />
                 <div class="tw-hflex tw-gap-5">
-                    <LinkBtn href="about" class="!tw-text-base !tw-font-normal !tw-min-w-24">
+                    <A href="about" class="tw-btn-primary !tw-text-base !tw-font-normal !tw-min-w-24">
                         Sobre
-                    </LinkBtn>
+                    </A>
 
-                    <LinkBtn href="posts" class="!tw-text-base !tw-font-normal !tw-min-w-24">
+                    <A href="posts" class="tw-btn-primary !tw-text-base !tw-font-normal !tw-min-w-24">
                         Posts
-                    </LinkBtn>
+                    </A>
 
-                    <LinkBtn href="projects" class="!tw-text-base !tw-font-normal !tw-min-w-24">
+                    <A href="projects" class="tw-btn-primary !tw-text-base !tw-font-normal !tw-min-w-24">
                         Projetos
-                    </LinkBtn>
+                    </A>
                 </div>
             </div>
         </BasePage>

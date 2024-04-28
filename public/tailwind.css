@@ -9,11 +9,17 @@
 }
 
 @layer utilities {
-    .tw-vflex {
-        @apply tw-flex tw-flex-col
-    }
+  .tw-vflex {
+    @apply tw-flex tw-flex-col;
+  }
 
-    .tw-hflex {
-        @apply tw-flex tw-flex-row
-    }
+  .tw-hflex {
+    @apply tw-flex tw-flex-row;
+  }
+}
+
+@layer components {
+  .tw-btn-primary {
+    @apply tw-text-center tw-text-sm tw-font-bold tw-text-gray-700 tw-border-solid tw-border-2 tw-border-gray-200 tw-rounded-xl tw-max-w-fit tw-px-4 tw-py-2 tw-bg-white dark:tw-text-white dark:tw-bg-graphite dark:tw-border-gray-400 tw-transition tw-duration-200 hover:tw-text-accent hover:tw-border-accent dark:hover:tw-border-accent-light dark:hover:tw-text-accent-light;
+  }
 }
