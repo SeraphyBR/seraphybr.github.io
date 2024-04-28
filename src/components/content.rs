@@ -27,7 +27,7 @@ pub fn BaseContent(
                     <i class="fa fa-chevron-left"></i>
                 </A>
             </div>
-            <article class="tw-prose dark:tw-prose-invert tw-max-w-none" inner_html=inner_html>
+            <article class="tw-prose dark:tw-prose-invert tw-max-w-none hover:prose-a:tw-text-accent dark:hover:prose-a:tw-text-accent-light" inner_html=inner_html>
                 {children.map(|c| c())}
             </article>
         </div>
