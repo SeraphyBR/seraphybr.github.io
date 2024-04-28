@@ -19,6 +19,7 @@ module.exports = {
       },
       backgroundImage: {
         'forest-stairs': "url('/img/background-1.jpg')",
+        'road-trees': "url('/img/background-2.jpg')",
       },
       animation: {
         rotateIn: 'rotateIn 1s both'
