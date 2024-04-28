@@ -23,7 +23,7 @@ pub fn HomePage() -> impl IntoView {
                         <i class="fa-brands fa-github"/>
                     </A>
 
-                    <A href="https://t.me/seraphybr" class="tw-btn-primaru !tw-text-3xl">
+                    <A href="https://t.me/seraphybr" class="tw-btn-primary !tw-text-3xl">
                         <i class="fa-brands fa-telegram"/>
                     </A>
                 </div>

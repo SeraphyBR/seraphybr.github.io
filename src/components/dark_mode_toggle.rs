@@ -1,6 +1,5 @@
 use leptos::*;
 use leptos_meta::Html;
-use leptos_router::A;
 use leptos_use::{use_color_mode, ColorMode, UseColorModeReturn};
 
 #[component]

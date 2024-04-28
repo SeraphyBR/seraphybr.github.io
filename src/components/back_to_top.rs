@@ -1,5 +1,4 @@
 use leptos::*;
-use leptos_router::A;
 use leptos_use::use_window_scroll;
 use web_sys::{ScrollBehavior, ScrollToOptions};
 
