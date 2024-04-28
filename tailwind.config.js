@@ -12,7 +12,10 @@ module.exports = {
       },
       colors: {
         graphite: '#222',
-        greenLime: '#348314',
+        accent: {
+          DEFAULT: '#348314',
+          light: '#56B045'
+        },
       },
       backgroundImage: {
         'forest-stairs': "url('/img/background-1.jpg')",

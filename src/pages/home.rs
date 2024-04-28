@@ -1,8 +1,7 @@
 use leptos::*;
+use leptos_router::A;
 
 use crate::{components::divider::Divider, pages::base::BasePage};
-
-use leptos_router::A;
 
 #[component]
 pub fn HomePage() -> impl IntoView {

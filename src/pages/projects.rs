@@ -35,14 +35,14 @@ pub fn ProjectsListPage() -> impl IntoView {
 #[component]
 fn ProjectItem(path: String, metadata: PostMetadata) -> impl IntoView {
     view! {
-        <div class="tw-max-w-sm tw-rounded-xl tw-overflow-hidden tw-shadow-lg">
+        <div class="tw-max-w-sm tw-rounded-xl tw-overflow-hidden tw-shadow-lg dark:tw-shadow-none dark:tw-border-2 dark:tw-border-gray-600">
             <img
                 class="tw-w-full tw-h-36"
                 src=metadata.front_image
                 alt=""
                 style:background-color=metadata.front_color
             />
-            <A href=path class="tw-text-gray-700 dark:tw-text-white hover:tw-text-greenLime">
+            <A href=path class="tw-text-gray-700 dark:tw-text-white hover:tw-text-accent dark:hover:tw-text-accent-light">
                 <div class="tw-px-6 tw-py-4">
                     <div class="tw-font-bold tw-text-xl tw-mb-2">{metadata.title}</div>
                     <p class="tw-text-base">
