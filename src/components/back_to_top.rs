@@ -1,5 +1,5 @@
-use crate::components::button::LinkBtn;
 use leptos::*;
+use leptos_router::A;
 use leptos_use::use_window_scroll;
 use web_sys::{ScrollBehavior, ScrollToOptions};
 
@@ -25,9 +25,9 @@ pub fn BackToTopBtn() -> impl IntoView {
 
     view! {
         <div style:opacity=opacity_btn class="tw-fixed tw-bottom-6 tw-right-6 tw-transition-opacity tw-duration-700 tw-ease-in-out">
-            <LinkBtn href="#" on:click=on_click_go_to_top class="!tw-bg-opacity-80">
+            <button on:click=on_click_go_to_top class="tw-btn-primary !tw-bg-opacity-80">
                 <i class="fa-solid fa-chevron-up"/>
-            </LinkBtn>
+            </button>
         </div>
     }
 }

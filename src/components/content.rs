@@ -1,7 +1,7 @@
 use chrono::{DateTime, Utc};
 use leptos::*;
 
-use crate::components::button::LinkBtn;
+use leptos_router::A;
 
 #[component]
 pub fn BaseContent(
@@ -23,9 +23,9 @@ pub fn BaseContent(
                 <Show when=move || created_date.is_some()>
                     <h4 class="tw-text-xl tw-font-bold tw-text-white">Criado em {created_date.map(|d| d.format("%d-%m-%Y").to_string())}</h4>
                 </Show>
-                <LinkBtn href=back_href>
+                <A href=back_href class="tw-btn-primary">
                     <i class="fa fa-chevron-left"></i>
-                </LinkBtn>
+                </A>
             </div>
             <article class="tw-prose dark:tw-prose-invert tw-max-w-none" inner_html=inner_html>
                 {children.map(|c| c())}

@@ -2,7 +2,7 @@ use leptos::*;
 use leptos_router::{use_params, Params, Redirect, A};
 
 use crate::{
-    components::{button::LinkBtn, content::BaseContent},
+    components::content::BaseContent,
     contexts::posts::use_posts,
     models::posts::{PostData, PostMetadata},
     pages::base::BasePage,
@@ -17,7 +17,7 @@ pub fn ProjectsListPage() -> impl IntoView {
             <div class="tw-vflex tw-justify-center tw-items-center tw-gap-5 tw-text-neutral-800 dark:tw-text-white tw-p-8">
                 <div class="tw-vflex tw-items-center tw-gap-6 tw-pb-12">
                     <h1 class="tw-text-3xl tw-font-bold">Projetos</h1>
-                    <LinkBtn href="/"><i class="fa fa-home"></i></LinkBtn>
+                    <A href="/" class="tw-btn-primary"><i class="fa fa-home"></i></A>
                 </div>
                 <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 lg:tw-grid-cols-3 tw-gap-4">
                     {

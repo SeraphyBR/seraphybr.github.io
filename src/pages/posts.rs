@@ -6,10 +6,7 @@ use leptos_router::A;
 
 use crate::components::content::BaseContent;
 use crate::models::posts::PostData;
-use crate::{
-    components::button::LinkBtn, contexts::posts::use_posts, models::posts::PostMetadata,
-    pages::base::BasePage,
-};
+use crate::{contexts::posts::use_posts, models::posts::PostMetadata, pages::base::BasePage};
 
 #[component]
 pub fn PostListPage() -> impl IntoView {
@@ -20,7 +17,7 @@ pub fn PostListPage() -> impl IntoView {
             <div class="tw-vflex tw-justify-center tw-items-center tw-gap-5 tw-text-neutral-800 dark:tw-text-white tw-p-8">
                 <div class="tw-vflex tw-items-center tw-gap-6 tw-pb-12">
                     <h1 class="tw-text-3xl tw-font-bold">Todas as postagens</h1>
-                    <LinkBtn href="/"><i class="fa fa-home"></i></LinkBtn>
+                    <A href="/" class="tw-btn-primary"><i class="fa fa-home"></i></A>
                 </div>
                 <ul class="tw-vflex tw-gap-8">
                     {
@@ -41,7 +38,7 @@ fn PostItem(path: String, metadata: PostMetadata) -> impl IntoView {
         <li class="tw-vflex tw-gap-4">
             <A href=path.clone() class="tw-font-bold tw-text-xl hover:tw-text-greenLime">{metadata.title}</A>
             <p class="tw-font-light tw-text-base">{metadata.brief}</p>
-            <LinkBtn href=path>Ler Mais</LinkBtn>
+            <A href=path>Ler Mais</A>
         </li>
     }
 }
