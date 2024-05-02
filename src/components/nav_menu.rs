@@ -47,7 +47,7 @@ pub fn NavMenu() -> impl IntoView {
                 when=display_menu
                 fallback=move || view! { <NavButton on:click=show_menu /> }
             >
-                <ul node_ref=menu_ref class="tw-bg-slate-100 tw-text-graphite dark:tw-bg-graphite dark:tw-text-white tw-text-sm tw-rounded-lg tw-w-full tw-overflow-hidden !tw-bg-opacity-80">
+                <ul node_ref=menu_ref class="tw-bg-slate-100/80 tw-text-graphite dark:tw-bg-graphite/80 tw-backdrop-blur-md dark:tw-text-white tw-text-sm tw-rounded-lg tw-w-full tw-overflow-hidden">
                     {linkItems.clone()}
                 </ul>
             </Show>
@@ -72,7 +72,7 @@ fn NavLinkItem(item: NavItem) -> impl IntoView {
 #[component]
 fn NavButton() -> impl IntoView {
     view! {
-        <button class="tw-btn-primary tw-bg-opacity-80">
+        <button class="tw-btn-primary tw-bg-opacity-80 tw-backdrop-blur-md">
             <i class="fa-solid fa-bars"></i>
         </button>
     }

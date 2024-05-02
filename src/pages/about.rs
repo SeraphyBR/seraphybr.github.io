@@ -6,7 +6,7 @@ use crate::{components::content::BaseContent, pages::base::BasePage};
 #[component]
 pub fn AboutPage() -> impl IntoView {
     view! {
-        <BasePage title="Sobre mim">
+        <BasePage title="Sobre mim" enable_back_to_top=true>
             <BaseContent
                 title="Sobre mim"
                 bg_color=Some("#4ce16599".to_string())

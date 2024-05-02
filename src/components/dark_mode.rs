@@ -25,7 +25,7 @@ pub fn DarkModeToggleBtn() -> impl IntoView {
     view! {
         <Html class=move || if mode() == ColorMode::Dark {"tw-dark"} else {""} />
         <div class="tw-fixed tw-top-6 tw-right-6">
-            <button on:click=toggle class="tw-btn-primary !tw-bg-opacity-80">
+            <button on:click=toggle class="tw-btn-primary tw-bg-opacity-80 tw-backdrop-blur-md">
                 <i class=icon />
             </button>
         </div>

@@ -24,7 +24,7 @@ pub fn BackToTopBtn() -> impl IntoView {
 
     view! {
         <div style:opacity=opacity_btn class="tw-fixed tw-bottom-6 tw-right-6 tw-transition-opacity tw-duration-700 tw-ease-in-out">
-            <button on:click=on_click_go_to_top class="tw-btn-primary !tw-bg-opacity-80">
+            <button on:click=on_click_go_to_top class="tw-btn-primary tw-bg-opacity-80 tw-backdrop-blur-md">
                 <i class="fa-solid fa-chevron-up"/>
             </button>
         </div>
