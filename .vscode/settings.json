@@ -19,6 +19,10 @@
         "editor.defaultFormatter": "rust-lang.rust-analyzer",
         "editor.formatOnSave": true
     },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
     "css.validate": false,
     "html.autoClosingTags": true,
     "rust-analyzer.semanticHighlighting.punctuation.enable": true,

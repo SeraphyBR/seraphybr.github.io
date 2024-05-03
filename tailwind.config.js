@@ -9,12 +9,24 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['"Fira Sans"'],
+        mono: ['"Fira Code"'],
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            pre: false,
+            code: false,
+            'pre code': false,
+            'code::before': false,
+            'code::after': false,
+          },
+        },
       },
       colors: {
         graphite: '#222',
         accent: {
           DEFAULT: '#348314',
-          light: '#56B045'
+          light: '#56B045',
         },
       },
       backgroundImage: {
@@ -22,22 +34,22 @@ module.exports = {
         'road-trees': "url('/img/background-2.jpg')",
       },
       animation: {
-        rotateIn: 'rotateIn 1s both'
+        rotateIn: 'rotateIn 1s both',
       },
       keyframes: {
         rotateIn: {
           '0%': {
             transform: 'rotate3d(0,0,1,-200deg)',
             transformOrigin: 'center',
-            opacity: '0'
+            opacity: '0',
           },
           '100%': {
             transform: 'none',
             transformOrigin: 'center',
-            opacity: '1'
-          }
-        }
-      }
+            opacity: '1',
+          },
+        },
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
