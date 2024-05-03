@@ -2,6 +2,12 @@ use chrono::{DateTime, Utc};
 use leptos::*;
 
 use leptos_router::A;
+use wasm_bindgen::prelude::*;
+
+#[wasm_bindgen(module = "/esbuild/js/highlight.min.js")]
+extern "C" {
+    fn highlight_all();
+}
 
 #[component]
 pub fn BaseContent(
@@ -13,6 +19,8 @@ pub fn BaseContent(
     #[prop(optional, into)] inner_html: Option<String>,
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
+    create_effect(move |_| highlight_all());
+
     view! {
         <div class="tw-vflex tw-justify-center tw-items-stretch tw-gap-5 tw-text-neutral-800 tw-p-8">
             <div class="tw-vflex tw-items-center tw-gap-6 tw-p-40 -tw-mt-16 -tw-ml-16 -tw-mr-16 tw-rounded-t-xl tw-bg-blend-multiply tw-bg-center tw-bg-cover"

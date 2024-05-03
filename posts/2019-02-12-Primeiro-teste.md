@@ -16,3 +16,9 @@ fn main(){
     printf!("Hello World");
 }
 ```
+
+```js
+const main = () => {
+    console.log("Hello world!")
+}
+```
