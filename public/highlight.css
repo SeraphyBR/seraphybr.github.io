@@ -23,6 +23,8 @@ pre code.hljs {
   padding: 1em;
   margin-bottom: 1em;
   border-radius: 12px;
+  border-color: #504945;
+  border-width: 2px;
 }
 
 code.hljs {
