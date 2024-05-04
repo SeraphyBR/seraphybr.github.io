@@ -47,7 +47,7 @@ pub fn NavMenu() -> impl IntoView {
                 when=display_menu
                 fallback=move || view! { <NavButton on:click=show_menu /> }
             >
-                <ul node_ref=menu_ref class="tw-bg-slate-100/80 tw-text-graphite dark:tw-bg-graphite/80 tw-backdrop-blur-md dark:tw-text-white tw-text-sm tw-rounded-lg tw-w-full tw-overflow-hidden">
+                <ul node_ref=menu_ref class="tw-bg-slate-100/80 dark:tw-bg-graphite/80 tw-backdrop-blur-md tw-text-sm tw-rounded-lg tw-w-full tw-overflow-hidden">
                     {linkItems.clone()}
                 </ul>
             </Show>
@@ -58,7 +58,7 @@ pub fn NavMenu() -> impl IntoView {
 #[component]
 fn NavLinkItem(item: NavItem) -> impl IntoView {
     view! {
-        <li class="tw-flex hover:tw-text-accent dark:hover:tw-text-accent-light">
+        <li class="tw-flex tw-text-clickable-colors">
             <A href={item.href} class="tw-px-5 tw-py-3 tw-flex tw-flex-row tw-gap-1 tw-w-full tw-items-center">
                 <div class="tw-w-5 tw-h-5">
                     <i class={format!("fa fa-{0}", item.fa_icon)}></i>

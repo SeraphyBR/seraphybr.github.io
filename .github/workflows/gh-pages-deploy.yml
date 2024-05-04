@@ -39,8 +39,11 @@ jobs:
       - name: Add WASM target
         run: rustup target add wasm32-unknown-unknown
 
-      - name: Download and install Node Dependencies (Tailwind)
+      - name: Download and install Node Dependencies
         run: npm install
+
+      - name: Run npm build
+        run: npm run build
 
       - name: lint
         run: cargo clippy & cargo fmt

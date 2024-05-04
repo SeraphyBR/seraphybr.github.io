@@ -1,7 +1,13 @@
 use std::fs;
 use std::io::Write;
+use std::process::Command;
 
 fn main() {
+    let _ = Command::new("npm")
+        .args(["run", "build"])
+        .output()
+        .expect("Falha ao executar npm run build");
+
     create_markdown_posts_with_files_to_include();
 }
 

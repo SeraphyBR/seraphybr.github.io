@@ -3,7 +3,7 @@ target = "index.html"
 dist = "dist"
 
 [watch]
-ignore = ["./src/markdown_posts.rs"]
+ignore = ["./src/markdown_posts.rs", "./esbuild"]
 
 [serve]
 port = 3000
