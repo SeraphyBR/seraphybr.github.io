@@ -36,7 +36,7 @@ pub fn PostListPage() -> impl IntoView {
 fn PostItem(path: String, metadata: PostMetadata) -> impl IntoView {
     view! {
         <li class="tw-vflex tw-gap-4">
-            <A href=path.clone() class="tw-font-bold tw-text-xl hover:tw-text-accent dark:hover:tw-text-accent-light">{metadata.title}</A>
+            <A href=path.clone() class="tw-font-bold tw-text-xl tw-text-clickable-colors">{metadata.title}</A>
             <p class="tw-font-light tw-text-base">{metadata.brief}</p>
             <A href=path class="tw-btn-primary">Ler Mais</A>
         </li>
