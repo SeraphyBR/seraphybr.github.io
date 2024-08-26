@@ -1,36 +1,46 @@
 {
-    "emmet.includeLanguages": {
-        "rust": "html",
-        "*.rs": "html"
-    },
-    "tailwindCSS.includeLanguages": {
-        "rust": "html",
-        "*.rs": "html"
-    },
-    "files.associations": {
-        "*.rs": "rust"
-    },
-    "editor.quickSuggestions": {
-        "other": "on",
-        "comments": "on",
-        "strings": true
-    },
-    "[rust]": {
-        "editor.defaultFormatter": "rust-lang.rust-analyzer",
-        "editor.formatOnSave": true
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    "css.validate": false,
-    "html.autoClosingTags": true,
-    "rust-analyzer.semanticHighlighting.punctuation.enable": true,
-    "tailwindCSS.files.exclude": [
-        "**/.git/**",
-        "**/node_modules/**",
-        "**/dist/**",
-    ],
-    "nixEnvSelector.nixFile": "${workspaceFolder}/shell.nix",
-    "rust-analyzer.check.command": "clippy"
+  "emmet.includeLanguages": {
+    "rust": "html",
+    "*.rs": "html"
+  },
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "rust": "html",
+    "*.rs": "html"
+  },
+  "files.associations": {
+    "*.rs": "rust"
+  },
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "on",
+    "strings": true
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+
+    "tailwindCSS.experimental.classRegex": ["'@apply([^']*)':"]
+  },
+  "css.validate": false,
+  "html.autoClosingTags": true,
+  "rust-analyzer.semanticHighlighting.punctuation.enable": true,
+  "tailwindCSS.files.exclude": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "nixEnvSelector.nixFile": "${workspaceFolder}/shell.nix",
+  "rust-analyzer.check.command": "clippy",
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "class:list",
+    ".*Classes.*"
+  ]
 }

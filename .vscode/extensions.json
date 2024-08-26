@@ -1,6 +1,10 @@
 {
     "recommendations": [
         "rust-lang.rust-analyzer",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "tamasfe.even-better-toml",
+        "esbenp.prettier-vscode",
+        "aaron-bond.better-comments",
+        "arrterian.nix-env-selector"
     ]
 }

@@ -28,7 +28,6 @@ fn error(errors: RwSignal<Errors>) -> impl IntoView {
 
                 <p class="tw-text-lg tw-font-medium">"Erros:"</p>
 
-                // Renderiza uma lista de erros como strings - útil para propósitos de desenvolvimento
                 <ul>
                     {move || {
                         errors

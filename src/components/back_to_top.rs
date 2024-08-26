@@ -15,11 +15,10 @@ pub fn BackToTopBtn() -> impl IntoView {
     };
 
     let on_click_go_to_top = |_| {
-        window().scroll_to_with_scroll_to_options(
-            ScrollToOptions::new()
-                .behavior(ScrollBehavior::Smooth)
-                .top(0.0),
-        );
+        let options = ScrollToOptions::default();
+        options.set_behavior(ScrollBehavior::Smooth);
+        options.set_top(0.0);
+        window().scroll_to_with_scroll_to_options(&options);
     };
 
     view! {
