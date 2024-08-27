@@ -10,79 +10,80 @@ use crate::{contexts::posts::use_posts, models::posts::PostMetadata, pages::base
 
 #[component]
 pub fn PostListPage() -> impl IntoView {
-    let posts = use_posts();
+  let posts = use_posts();
 
-    view! {
-        <BasePage title="Todos os Posts">
-            <div class="tw-vflex tw-justify-center tw-items-center tw-gap-5 tw-text-neutral-800 dark:tw-text-white tw-p-8">
-                <div class="tw-vflex tw-items-center tw-gap-6 tw-pb-12">
-                    <h1 class="tw-text-3xl tw-font-bold tw-text-center">Todas as postagens</h1>
-                    <A href="/" class="tw-btn-primary"><i class="fa fa-home"></i></A>
-                </div>
-                <ul class="tw-vflex tw-gap-8">
-                    {
-                        posts.into_iter()
-                            .filter(|p| !p.metadata.project)
-                            .map(|p| view! { <PostItem path=p.path metadata=p.metadata /> })
-                            .collect_view()
-                    }
-                </ul>
-            </div>
-        </BasePage>
-    }
+  view! {
+      <BasePage title="Todos os Posts">
+          <div class="tw-vflex tw-justify-center tw-items-center tw-gap-5 tw-text-neutral-800 dark:tw-text-white tw-p-8">
+              <div class="tw-vflex tw-items-center tw-gap-6 tw-pb-12">
+                  <h1 class="tw-text-3xl tw-font-bold tw-text-center">Todas as postagens</h1>
+                  <A href="/" class="tw-btn-primary"><i class="fa fa-home"></i></A>
+              </div>
+              <ul class="tw-vflex tw-gap-8">
+                  {
+                      posts.into_iter()
+                          .filter(|p| !p.metadata.project)
+                          .map(|p| view! { <PostItem path=p.path metadata=p.metadata /> })
+                          .collect_view()
+                  }
+              </ul>
+          </div>
+      </BasePage>
+  }
 }
 
 #[component]
 fn PostItem(path: String, metadata: PostMetadata) -> impl IntoView {
-    view! {
-        <li class="tw-vflex tw-gap-4">
-            <A href=path.clone() class="tw-font-bold tw-text-xl tw-text-clickable-colors">{metadata.title}</A>
-            <p class="tw-font-light tw-text-base">{metadata.brief}</p>
-            <A href=path class="tw-btn-primary">Ler Mais</A>
-        </li>
-    }
+  view! {
+      <li class="tw-vflex tw-gap-4">
+          <A href=path.clone() class="tw-font-bold tw-text-xl tw-text-clickable-colors">{metadata.title}</A>
+          <p class="tw-font-light tw-text-base">{metadata.brief}</p>
+          <A href=path class="tw-btn-primary">Ler Mais</A>
+      </li>
+  }
 }
 
 #[derive(Params, PartialEq, Clone)]
 struct PostPageUrlParams {
-    path: String,
+  path: String,
 }
 
 #[component]
 pub fn PostPage() -> impl IntoView {
-    let params = use_params::<PostPageUrlParams>();
+  let params = use_params::<PostPageUrlParams>();
 
-    move || {
-        let path = params.get().map(|p| p.path).unwrap_or_default();
+  move || {
+    let path = params.get().map(|p| p.path).unwrap_or_default();
 
-        let posts = use_posts();
+    let posts = use_posts();
 
-        let post = posts
-            .into_iter()
-            .filter(|p| !p.metadata.project)
-            .find(|p| p.path == path);
+    let post = posts
+      .into_iter()
+      .filter(|p| !p.metadata.project)
+      .find(|p| p.path == path);
 
-        post.map(|p| view! { <PostContentPage post=p/> })
-            .or_else(|| Some(view! { <Redirect path="/404"/> }))
-            .into_view()
-    }
+    post
+      .map(|p| view! { <PostContentPage post=p/> })
+      .or_else(|| Some(view! { <Redirect path="/404"/> }))
+      .into_view()
+  }
 }
 
 #[component]
 fn PostContentPage(post: PostData) -> impl IntoView {
-    let bg_img = post.metadata.front_image.map(|bg| format!("url({bg})"));
+  let bg_img = post.metadata.front_image.map(|bg| format!("url({bg})"));
 
-    view! {
-        <BasePage title=post.metadata.title.clone() enable_back_to_top=true>
-            <BaseContent
-                title=post.metadata.title
-                bg_color=post.metadata.front_color
-                bg_img=bg_img
-                created_date=post.metadata.date
-                inner_html=post.content
-                back_href="/posts"
-            >
-            </BaseContent>
-        </BasePage>
-    }
+  view! {
+      <BasePage title=post.metadata.title.clone() enable_back_to_top=true>
+          <BaseContent
+              title=post.metadata.title
+              bg_color=post.metadata.front_color
+              bg_img=bg_img
+              created_date=post.metadata.date
+              inner_html=post.content
+              back_href="/posts"
+          >
+          </BaseContent>
+      </BasePage>
+  }
 }
