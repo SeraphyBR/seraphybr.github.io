@@ -6,6 +6,8 @@
     "esbenp.prettier-vscode",
     "aaron-bond.better-comments",
     "arrterian.nix-env-selector",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "usernamehw.errorlens",
+    "fill-labs.dependi"
   ]
 }

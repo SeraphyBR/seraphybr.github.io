@@ -3,10 +3,11 @@ use std::io::Write;
 use std::process::Command;
 
 fn main() {
-  let _ = Command::new("npm")
-    .args(["run", "build"])
-    .output()
-    .expect("Falha ao executar npm run build");
+  let npm_result = Command::new("npm").args(["run", "build"]).output();
+
+  if let Err(err) = npm_result {
+    eprintln!("{}", err);
+  }
 
   create_markdown_posts_with_files_to_include();
 }
