@@ -1,6 +1,6 @@
-use leptos::*;
+use leptos::prelude::*;
+use leptos::web_sys::{ScrollBehavior, ScrollToOptions};
 use leptos_use::use_window_scroll;
-use web_sys::{ScrollBehavior, ScrollToOptions};
 
 #[component]
 pub fn BackToTopBtn() -> impl IntoView {
@@ -8,9 +8,9 @@ pub fn BackToTopBtn() -> impl IntoView {
 
   let opacity_btn = move || {
     if y() > 300.0 {
-      1
+      1.to_string()
     } else {
-      0
+      0.to_string()
     }
   };
 

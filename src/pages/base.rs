@@ -1,4 +1,4 @@
-use leptos::*;
+use leptos::prelude::*;
 use leptos_meta::Title;
 
 use crate::components::back_to_top::BackToTopBtn;

@@ -26,7 +26,7 @@ fn create_markdown_posts_with_files_to_include() {
     let file = file.expect("Falha ao ler o arquivo");
     let path = file.path();
 
-    if path.is_file() && path.extension().map_or(false, |ext| ext == "md") {
+    if path.is_file() && path.extension().is_some_and(|ext| ext == "md") {
       let file_name = path.file_stem().unwrap().to_str().unwrap();
 
       writeln!(

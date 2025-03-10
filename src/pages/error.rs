@@ -1,6 +1,5 @@
-use leptos::*;
-
 use crate::pages::base::BasePage;
+use leptos::prelude::*;
 
 #[component]
 pub fn ErrorBoundaryPage(children: Children) -> impl IntoView {
@@ -11,7 +10,7 @@ pub fn ErrorBoundaryPage(children: Children) -> impl IntoView {
   }
 }
 
-fn error(errors: RwSignal<Errors>) -> impl IntoView {
+fn error(errors: ArcRwSignal<Errors>) -> impl IntoView {
   view! {
       <BasePage title="Error">
           <div class="tw-flex tw-flex-col tw-gap-4">
