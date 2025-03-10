@@ -37,12 +37,10 @@ pub fn NavMenu() -> impl IntoView {
       },
     ];
 
-    let linkItems = items
+    items
       .into_iter()
       .map(|i| view! { <NavLinkItem item=i/> })
-      .collect_view();
-
-    linkItems
+      .collect_view()
   };
 
   view! {
