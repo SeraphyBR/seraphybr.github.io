@@ -1,5 +1,5 @@
-use leptos::*;
-use leptos_router::A;
+use leptos::prelude::*;
+use leptos_router::components::A;
 
 use crate::{components::divider::Divider, pages::base::BasePage};
 
@@ -14,29 +14,29 @@ pub fn HomePage() -> impl IntoView {
               <h3 class="tw-text-base tw-font-light">"Desenvolvedor - Página em construção"</h3>
               <Divider />
               <div class="tw-hflex tw-gap-5">
-                  <A href="mailto:luisjuniorbr@gmail.com" class="tw-btn-primary !tw-text-3xl">
+                  <A href="mailto:luisjuniorbr@gmail.com" attr:class="tw-btn-primary !tw-text-3xl">
                       <i class="fa fa-envelope-square"/>
                   </A>
 
-                  <A href="https://github.com/seraphybr" class="tw-btn-primary !tw-text-3xl">
+                  <A href="https://github.com/seraphybr" attr:class="tw-btn-primary !tw-text-3xl">
                       <i class="fa-brands fa-github"/>
                   </A>
 
-                  <A href="https://t.me/seraphybr" class="tw-btn-primary !tw-text-3xl">
+                  <A href="https://t.me/seraphybr" attr:class="tw-btn-primary !tw-text-3xl">
                       <i class="fa-brands fa-telegram"/>
                   </A>
               </div>
               <Divider />
               <div class="tw-hflex tw-gap-5">
-                  <A href="about" class="tw-btn-primary !tw-text-base !tw-font-normal !tw-min-w-24">
+                  <A href="about" attr:class="tw-btn-primary !tw-text-base !tw-font-normal !tw-min-w-24">
                       Sobre
                   </A>
 
-                  <A href="posts" class="tw-btn-primary !tw-text-base !tw-font-normal !tw-min-w-24">
+                  <A href="posts" attr:class="tw-btn-primary !tw-text-base !tw-font-normal !tw-min-w-24">
                       Posts
                   </A>
 
-                  <A href="projects" class="tw-btn-primary !tw-text-base !tw-font-normal !tw-min-w-24">
+                  <A href="projects" attr:class="tw-btn-primary !tw-text-base !tw-font-normal !tw-min-w-24">
                       Projetos
                   </A>
               </div>

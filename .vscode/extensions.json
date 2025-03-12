@@ -8,6 +8,7 @@
     "arrterian.nix-env-selector",
     "editorconfig.editorconfig",
     "usernamehw.errorlens",
+    "fill-labs.dependi",
     "fill-labs.dependi"
   ]
 }

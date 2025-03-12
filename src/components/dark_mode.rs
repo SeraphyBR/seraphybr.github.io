@@ -1,6 +1,6 @@
-use leptos::*;
+use leptos::prelude::*;
 use leptos_meta::Html;
-use leptos_use::{use_color_mode, ColorMode, UseColorModeReturn};
+use leptos_use::{ColorMode, UseColorModeReturn, use_color_mode};
 
 #[component]
 pub fn DarkModeToggleBtn() -> impl IntoView {
@@ -23,7 +23,7 @@ pub fn DarkModeToggleBtn() -> impl IntoView {
   };
 
   view! {
-      <Html class=move || if mode() == ColorMode::Dark {"tw-dark"} else {""} />
+      <Html attr:class=move || if mode() == ColorMode::Dark {"tw-dark"} else {""} />
       <div class="tw-fixed tw-top-6 tw-right-6">
           <button on:click=toggle class="tw-btn-primary tw-bg-opacity-80 tw-backdrop-blur-md">
               <i class=icon />

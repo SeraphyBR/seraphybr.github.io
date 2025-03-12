@@ -32,18 +32,11 @@
   "css.validate": false,
   "html.autoClosingTags": true,
   "rust-analyzer.semanticHighlighting.punctuation.enable": true,
-  "tailwindCSS.files.exclude": [
-    "**/.git/**",
-    "**/node_modules/**",
-    "**/dist/**"
-  ],
+  "tailwindCSS.files.exclude": ["**/.git/**", "**/node_modules/**", "**/dist/**"],
   "nixEnvSelector.nixFile": "${workspaceFolder}/shell.nix",
   "rust-analyzer.check.command": "clippy",
-  "tailwindCSS.classAttributes": [
-    "class",
-    "className",
-    "ngClass",
-    "class:list",
-    ".*Classes.*"
-  ]
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass", "class:list", ".*Classes.*"],
+  "tailwindCSS.experimental.classRegex": [["clsx!\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]],
+  "tailwindCSS.experimental.configFile": "tailwind.config.js",
+  "gitlens.hovers.enabled": false
 }

@@ -1,6 +1,6 @@
-use leptos::*;
+use leptos::prelude::*;
 use leptos_meta::*;
-use leptos_router::*;
+use leptos_router::{components::*, path};
 
 mod components;
 mod contexts;
@@ -35,7 +35,7 @@ pub fn App() -> impl IntoView {
   };
 
   view! {
-      <Html lang="pt-br" dir="ltr" />
+      <Html attr:lang="pt-br" attr:dir="ltr" />
 
       // sets the document title
       <Title formatter=title_formatter />
@@ -49,15 +49,14 @@ pub fn App() -> impl IntoView {
               <Router>
                   <NavMenu />
                   <DarkModeToggleBtn />
-                  <Routes>
-                      <Route path="/" view=HomePage/>
-                      <Route path="posts" view=PostListPage/>
-                      <Route path="posts/:path" view=PostPage/>
-                      <Route path="projects" view=ProjectsListPage/>
-                      <Route path="projects/:path" view=ProjectPage/>
-                      <Route path="about" view=AboutPage/>
-                      <Route path="404" view=NotFoundPage/>
-                      <Route path="/*" view=NotFoundPage/>
+                  <Routes fallback=NotFoundPage>
+                      <Route path=path!("/") view=HomePage/>
+                      <Route path=path!("posts") view=PostListPage/>
+                      <Route path=path!("posts/:path") view=PostPage/>
+                      <Route path=path!("projects") view=ProjectsListPage/>
+                      <Route path=path!("projects/:path") view=ProjectPage/>
+                      <Route path=path!("about") view=AboutPage/>
+                      <Route path=path!("404") view=NotFoundPage/>
                   </Routes>
               </Router>
           </PostsProvider>

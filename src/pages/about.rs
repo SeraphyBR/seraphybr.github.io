@@ -1,5 +1,5 @@
 use chrono::{Datelike, Utc};
-use leptos::*;
+use leptos::prelude::*;
 
 use crate::{components::content::BaseContent, pages::base::BasePage};
 
