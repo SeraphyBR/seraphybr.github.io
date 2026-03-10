@@ -1,4 +1,4 @@
-use chrono::{Datelike, Utc};
+use chrono::{Datelike, NaiveDate, Utc};
 use leptos::prelude::*;
 
 use crate::{components::content::BaseContent, pages::base::BasePage};
@@ -21,7 +21,12 @@ pub fn AboutPage() -> impl IntoView {
 
 #[component]
 fn AboutContent() -> impl IntoView {
-  let age = Utc::now().year() - 1999;
+  let now = Utc::now().date_naive();
+  let birthday = NaiveDate::from_ymd_opt(1999, 9, 16).unwrap();
+  let mut age = now.year() - birthday.year();
+  if (now.month(), now.day()) < (birthday.month(), birthday.day()) {
+    age -= 1;
+  }
 
   view! {
       <ul>
